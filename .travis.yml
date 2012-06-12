@@ -1,0 +1,4 @@
+rvm:
+ - 1.9.3
+gemfile: test/Gemfile
+script: 'bundle exec ruby test/validate.rb'

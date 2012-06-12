@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           targetNamespace="http://www.doctag.org/0.9/schema" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:doctag="http://www.doctag.org/0.9/schema">
+    <xs:simpleType name="documentType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="invoice"/>
+            <xs:enumeration value="offer"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="amount">
+        <xs:all>
+            <xs:element name="gross" type="xs:float" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="net" type="xs:float" minOccurs="1" maxOccurs="1"/>
+        </xs:all>
+        <xs:attribute name="currency" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="singleAmount">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attribute name="currency" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="address">
+        <xs:all>
+            <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="contact" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="street" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="zipCode" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="city" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="state" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="country" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="taxNumber" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="item">
+        <xs:all>
+            <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="unitPrice" type="doctag:amount" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="unit" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="quantity" type="xs:float" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="total" type="doctag:amount" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="tax" type="doctag:tax" minOccurs="1" maxOccurs="1"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="tax">
+        <xs:all>
+            <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="rate" type="xs:float" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="amount" type="doctag:singleAmount" minOccurs="1" maxOccurs="1"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="discount">
+        <xs:all>
+            <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="rate" type="xs:float" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="amount" type="doctag:singleAmount" minOccurs="0" maxOccurs="1"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:element name="doctag">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="docType" type="doctag:documentType" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="number" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="customerNumber" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="deliveryDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="dueDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="total" type="doctag:amount" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="discount" type="doctag:discount" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="note" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="sender" type="doctag:address" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="recipient" type="doctag:address" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="taxes" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="tax" type="doctag:tax" minOccurs="1" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="items" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="item" type="doctag:item" minOccurs="1" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+            <xs:attribute name="version" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

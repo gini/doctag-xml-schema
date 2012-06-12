@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctag xmlns="http://www.doctag.org/0.9/schema" version="0.9">
+    <id>org.doctag.example.23</id>
+    <docType>invoice</docType>
+
+    <number>RE1234</number>
+    <customerNumber>CN271828183</customerNumber>
+
+    <date>2012-05-22</date>
+    <deliveryDate>2012-04-11</deliveryDate>
+    <dueDate>2012-04-25</dueDate>
+
+    <total currency="EUR">
+        <net>586.0</net>
+        <gross>696.62</gross>
+    </total>
+
+    <discount>
+        <date>2012-04-14</date>
+        <rate>3.00</rate>
+        <amount currency="EUR">20.90</amount>
+    </discount>
+
+    <note>
+        <![CDATA[Lorem ipsum dolor sit amet, consetetur adipisici elit...]]>
+    </note>
+
+    <sender>
+        <name>ACME GmbH &amp; Co. KG</name>
+        <contact>Erika Mustermann</contact>
+        <street>Musterstraße 42</street>
+        <zipCode>12345</zipCode>
+        <city>München</city>
+        <state>Bayern</state>
+        <country>DE</country>
+        <taxNumber>DE314159265</taxNumber>
+    </sender>
+
+    <recipient>
+        <name>Max Mustermann</name>
+        <street>Musterallee 23</street>
+        <zipCode>98765</zipCode>
+        <city>Berlin</city>
+        <state>Berlin</state>
+        <country>DE</country>
+    </recipient>
+
+    <taxes>
+        <tax>
+            <name>MwSt</name>
+            <rate>19.0</rate>
+            <amount currency="EUR">186.2</amount>
+        </tax>
+        <tax>
+            <name>MwSt</name>
+            <rate>7.0</rate>
+            <amount currency="EUR">0.42</amount>
+        </tax>
+    </taxes>
+
+    <items>
+        <item>
+            <title>Malerarbeiten</title>
+            <description>Büroräume grün gestrichen</description>
+            <unitPrice currency="EUR">
+                <net>60.0</net>
+                <gross>71.4</gross>
+            </unitPrice>
+            <unit>Stunde</unit>
+            <quantity>8.0</quantity>
+            <total currency="EUR">
+                <net>480.0</net>
+                <gross>571.2</gross>
+            </total>
+            <tax>
+                <name>MwSt</name>
+                <rate>19.0</rate>
+                <amount currency="EUR">91.2</amount>
+            </tax>
+        </item>
+        <item>
+            <title>Farbe</title>
+            <description>Grün, superdeckend</description>
+            <unitPrice currency="EUR">
+                <net>20.0</net>
+                <gross>23.8</gross>
+            </unitPrice>
+            <unit>Eimer</unit>
+            <quantity>5.0</quantity>
+            <total currency="EUR">
+                <net>100.0</net>
+                <gross>119.0</gross>
+            </total>
+            <tax>
+                <name>MwSt</name>
+                <rate>19.0</rate>
+                <amount currency="EUR">19.0</amount>
+            </tax>
+        </item>
+        <item>
+            <title>Pausenverpflegung</title>
+            <description>Pizza!!!</description>
+            <unitPrice currency="EUR">
+                <net>6.0</net>
+                <gross>6.42</gross>
+            </unitPrice>
+            <unit>Stück</unit>
+            <quantity>1.0</quantity>
+            <total currency="EUR">
+                <net>6.0</net>
+                <gross>6.42</gross>
+            </total>
+            <tax>
+                <name>MwSt</name>
+                <rate>7.0</rate>
+                <amount currency="EUR">0.42</amount>
+            </tax>
+        </item>
+    </items>
+</doctag>

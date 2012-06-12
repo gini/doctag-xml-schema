@@ -1,0 +1,12 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    libxml-ruby (2.3.2)
+    minitest (3.0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  libxml-ruby
+  minitest
