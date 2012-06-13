@@ -14,15 +14,6 @@
             <xs:element name="gross" type="xs:float" minOccurs="1" maxOccurs="1"/>
             <xs:element name="net" type="xs:float" minOccurs="1" maxOccurs="1"/>
         </xs:all>
-        <xs:attribute name="currency" type="xs:string" use="required"/>
-    </xs:complexType>
-
-    <xs:complexType name="singleAmount">
-        <xs:simpleContent>
-            <xs:extension base="xs:float">
-                <xs:attribute name="currency" type="xs:string" use="required"/>
-            </xs:extension>
-        </xs:simpleContent>
     </xs:complexType>
 
     <xs:complexType name="address">
@@ -54,7 +45,7 @@
         <xs:all>
             <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
             <xs:element name="rate" type="xs:float" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="amount" type="doctag:singleAmount" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="amount" type="xs:float" minOccurs="1" maxOccurs="1"/>
         </xs:all>
     </xs:complexType>
 
@@ -62,7 +53,7 @@
         <xs:all>
             <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
             <xs:element name="rate" type="xs:float" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="amount" type="doctag:singleAmount" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="amount" type="xs:float" minOccurs="0" maxOccurs="1"/>
         </xs:all>
     </xs:complexType>
 
@@ -78,6 +69,7 @@
                 <xs:element name="dueDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="total" type="doctag:amount" minOccurs="1" maxOccurs="1"/>
                 <xs:element name="discount" type="doctag:discount" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="currency" type="xs:string" minOccurs="1" maxOccurs="1"/>
                 <xs:element name="note" type="xs:string" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="sender" type="doctag:address" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="recipient" type="doctag:address" minOccurs="0" maxOccurs="1"/>

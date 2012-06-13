@@ -10,7 +10,9 @@
     <deliveryDate>2012-04-11</deliveryDate>
     <dueDate>2012-04-25</dueDate>
 
-    <total currency="EUR">
+    <currency>EUR</currency>
+
+    <total>
         <net>586.0</net>
         <gross>696.62</gross>
     </total>
@@ -18,7 +20,7 @@
     <discount>
         <date>2012-04-14</date>
         <rate>3.00</rate>
-        <amount currency="EUR">20.90</amount>
+        <amount>20.90</amount>
     </discount>
 
     <note>
@@ -49,12 +51,12 @@
         <tax>
             <name>MwSt</name>
             <rate>19.0</rate>
-            <amount currency="EUR">186.2</amount>
+            <amount>186.2</amount>
         </tax>
         <tax>
             <name>MwSt</name>
             <rate>7.0</rate>
-            <amount currency="EUR">0.42</amount>
+            <amount>0.42</amount>
         </tax>
     </taxes>
 
@@ -62,58 +64,58 @@
         <item>
             <title>Malerarbeiten</title>
             <description>Büroräume grün gestrichen</description>
-            <unitPrice currency="EUR">
+            <unitPrice>
                 <net>60.0</net>
                 <gross>71.4</gross>
             </unitPrice>
             <unit>Stunde</unit>
             <quantity>8.0</quantity>
-            <total currency="EUR">
+            <total>
                 <net>480.0</net>
                 <gross>571.2</gross>
             </total>
             <tax>
                 <name>MwSt</name>
                 <rate>19.0</rate>
-                <amount currency="EUR">91.2</amount>
+                <amount>91.2</amount>
             </tax>
         </item>
         <item>
             <title>Farbe</title>
             <description>Grün, superdeckend</description>
-            <unitPrice currency="EUR">
+            <unitPrice>
                 <net>20.0</net>
                 <gross>23.8</gross>
             </unitPrice>
             <unit>Eimer</unit>
             <quantity>5.0</quantity>
-            <total currency="EUR">
+            <total>
                 <net>100.0</net>
                 <gross>119.0</gross>
             </total>
             <tax>
                 <name>MwSt</name>
                 <rate>19.0</rate>
-                <amount currency="EUR">19.0</amount>
+                <amount>19.0</amount>
             </tax>
         </item>
         <item>
             <title>Pausenverpflegung</title>
             <description>Pizza!!!</description>
-            <unitPrice currency="EUR">
+            <unitPrice>
                 <net>6.0</net>
                 <gross>6.42</gross>
             </unitPrice>
             <unit>Stück</unit>
             <quantity>1.0</quantity>
-            <total currency="EUR">
+            <total>
                 <net>6.0</net>
                 <gross>6.42</gross>
             </total>
             <tax>
                 <name>MwSt</name>
                 <rate>7.0</rate>
-                <amount currency="EUR">0.42</amount>
+                <amount>0.42</amount>
             </tax>
         </item>
     </items>
