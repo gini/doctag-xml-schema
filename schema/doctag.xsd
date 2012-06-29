@@ -68,11 +68,17 @@
                 <xs:element name="deliveryDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="dueDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="total" type="doctag:amount" minOccurs="1" maxOccurs="1"/>
-                <xs:element name="discount" type="doctag:discount" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="currency" type="xs:string" minOccurs="1" maxOccurs="1"/>
                 <xs:element name="note" type="xs:string" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="sender" type="doctag:address" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="recipient" type="doctag:address" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="discounts" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="discount" type="doctag:discount" minOccurs="1" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="taxes" minOccurs="0" maxOccurs="1">
                     <xs:complexType>
                         <xs:sequence>

@@ -7,8 +7,8 @@
     <customerNumber>CN271828183</customerNumber>
 
     <date>2012-05-22</date>
-    <deliveryDate>2012-04-11</deliveryDate>
-    <dueDate>2012-04-25</dueDate>
+    <deliveryDate>2012-05-11</deliveryDate>
+    <dueDate>2012-06-25</dueDate>
 
     <currency>EUR</currency>
 
@@ -17,11 +17,18 @@
         <gross>696.62</gross>
     </total>
 
-    <discount>
-        <date>2012-04-14</date>
-        <rate>3.00</rate>
-        <amount>20.90</amount>
-    </discount>
+    <discounts>
+        <discount>
+            <date>2012-04-14</date>
+            <rate>3.00</rate>
+            <amount>20.90</amount>
+        </discount>
+        <discount>
+            <date>2012-05-29</date>
+            <rate>2.00</rate>
+            <amount>13.93</amount>
+        </discount>
+    </discounts>
 
     <note>
         <![CDATA[Lorem ipsum dolor sit amet, consetetur adipisici elit...]]>
