@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doctag xmlns="http://www.doctag.org/0.9/schema" version="0.9">
+<doctag xmlns="http://www.doctag.org/0.4/schema" version="0.4">
     <id>org.doctag.example.23</id>
     <docType>invoice</docType>
 

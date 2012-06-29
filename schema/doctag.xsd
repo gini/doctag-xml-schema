@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
-           targetNamespace="http://www.doctag.org/0.9/schema" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:doctag="http://www.doctag.org/0.9/schema">
+           targetNamespace="http://www.doctag.org/0.4/schema" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:doctag="http://www.doctag.org/0.4/schema">
     <xs:simpleType name="documentType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="invoice"/>
